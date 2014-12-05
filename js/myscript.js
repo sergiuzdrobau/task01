@@ -18,8 +18,6 @@ function mustacheDo() {
 }
 
 
-
-
 function showSumms(a, b, c) {
     var added_div = document.createElement("div");
     added_div.style.fontSize = "14px";
@@ -369,8 +367,13 @@ $(document).ready(function() {
                 if (id == 1) {
                     var users = new Object();
                     users = {
-                        ['id' + id]: id, ['title' + id]: title.val(), ['brand' + id]: brand.val(), ['timeframe' + id]: timeframe.val(), ['win' + id]: win.val(), ['timeframeyear' + id]: timeframeyear.val(), ['sales' + id]: parseInt(sales.val())
-                    }
+                        'id1': id, 
+                        'title1' : title.val(),
+                        'brand1': brand.val(),
+                        'timeframe1' : timeframe.val(),
+                        'win1' : win.val(),
+                        'timeframeyear1' : timeframeyear.val(),
+                        'sales1' : parseInt(sales.val())};
                     localStorage.setItem('users', JSON.stringify(users));
                 } else {
                     users = localStorage.getItem('users');
