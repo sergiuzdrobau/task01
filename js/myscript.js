@@ -7,6 +7,7 @@ if (typeof nr_max === 'undefined' || nr_max == null || nr_max == 0) {
     id = nr_max;
 }
 
+
 function mustacheDo() {
     allData = localStorage.getItem('allData');
     allData = JSON.parse(allData);
@@ -15,6 +16,9 @@ function mustacheDo() {
     var box = document.getElementById("users");
     box.innerHTML = html;
 }
+
+
+
 
 function showSumms(a, b, c) {
     var added_div = document.createElement("div");
@@ -110,13 +114,13 @@ function edit_row(id) {
 
 
                             data_to_array.push({
-                                "0": users['id' + i],
-                                "1": users['title' + i],
-                                "2": users['brand' + i],
-                                "3": users['sales' + i],
-                                "4": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
-                                "5": users['timeframe' + i],
-                                "6": users['timeframeyear' + i]
+                                "id": users['id' + i],
+                                "title": users['title' + i],
+                                "brand": users['brand' + i],
+                                "sales": users['sales' + i],
+                                "sales2": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
+                                "timeframe": users['timeframe' + i],
+                                "timeframeyear": users['timeframeyear' + i]
                             });
                             allData = {
                                 "getData": data_to_array
@@ -199,13 +203,13 @@ function delete_row(id) {
                 title_sel = users['title' + i];
                 if (typeof title_sel == 'string') {
                     data_to_array.push({
-                        "0": users['id' + i],
-                        "1": users['title' + i],
-                        "2": users['brand' + i],
-                        "3": users['sales' + i],
-                        "4": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
-                        "5": users['timeframe' + i],
-                        "6": users['timeframeyear' + i]
+                        "id": users['id' + i],
+                        "title": users['title' + i],
+                        "brand": users['brand' + i],
+                        "sales": users['sales' + i],
+                        "sales2": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
+                        "timeframe": users['timeframe' + i],
+                        "timeframeyear": users['timeframeyear' + i]
                     });
                     allData = {
                         "getData": data_to_array
@@ -281,13 +285,13 @@ $(document).ready(function() {
             title_sel = users['title' + i];
             if (typeof title_sel == 'string') {
                 data_to_array.push({
-                    "0": users['id' + i],
-                    "1": users['title' + i],
-                    "2": users['brand' + i],
-                    "3": users['sales' + i],
-                    "4": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
-                    "5": users['timeframe' + i],
-                    "6": users['timeframeyear' + i]
+                    "id": users['id' + i],
+                    "title": users['title' + i],
+                    "brand": users['brand' + i],
+                    "sales": users['sales' + i],
+                    "sales2": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
+                    "timeframe": users['timeframe' + i],
+                    "timeframeyear": users['timeframeyear' + i]
                 });
                 allData = {
                     "getData": data_to_array
@@ -397,13 +401,13 @@ $(document).ready(function() {
                     title_sel = users['title' + i];
                     if (typeof title_sel == 'string') {
                         data_to_array.push({
-                            "0": users['id' + i],
-                            "1": users['title' + i],
-                            "2": users['brand' + i],
-                            "3": users['sales' + i],
-                            "4": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
-                            "5": users['timeframe' + i],
-                            "6": users['timeframeyear' + i]
+                            "id": users['id' + i],
+                            "title": users['title' + i],
+                            "brand": users['brand' + i],
+                            "sales": users['sales' + i],
+                            "sales2": (parseInt(users['sales' + i]) / 1.1).toFixed(2),
+                            "timeframe": users['timeframe' + i],
+                            "timeframeyear": users['timeframeyear' + i]
                         });
                         allData = {
                             "getData": data_to_array
@@ -452,4 +456,5 @@ $(document).ready(function() {
             dialog.dialog("open");
         });
     });
+
 });

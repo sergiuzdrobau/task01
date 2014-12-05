@@ -117,7 +117,7 @@
         <table id="users" class="ui-widget ui-widget-content">
             <thead>
                 <tr class="ui-widget-header ">
-                    <th>ID</th>
+                    <th>ID></th>
                     <th>Title</th>
                     <th>Brand</th>
                     <th>Launch TimeFrame</th>
@@ -143,44 +143,53 @@
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/myscript.js"></script>
-    <div id="box">
-        
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
-        <script type="mustache/x-tmpl" id="helloTmpl">
-            <table id="users" class="ui-widget ui-widget-content">
-                <thead>
-                    <tr class="ui-widget-header ">
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Brand</th>
-                        <th>Launch TimeFrame</th>
-                        <th>Est. Sales Potential(USD)</th>
-                        <th>Est. Sales Potential(CHF)</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#getData}}
-                    <tr>
-                        <td>ML{{0}}</td>
-                        <td>{{1}}</td>
-                        <td>{{2}}</td>
-                        <td>{{5}} {{6}}</td>
-                        <td>{{3}}</td>
-                        <td>{{4}}</td>
-                        <td>To Be Launched</td>
-                        <td><img style="cursor:pointer;" onclick="edit_row({{0}})" width='16px' height='16px' id='edit{{0}}' src='css/images/pencil.png'> <img style='cursor:pointer;' onclick='delete_row({{0}})' width='16px' height='16px' id='delete{{0}}' src='css/images/delete.jpg'>
-                        </td>
-                    </tr>
-                    {{/getData}}
-                </tbody>
-            </table>
-        </script>
-        <script>
-            mustacheDo();
-        </script>
-        <div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+    <script type="mustache/x-tmpl" id="helloTmpl" src="js/mustache.js">
+        <table id="users" class="ui-widget ui-widget-content">
+            <thead>
+                <tr class="ui-widget-header ">
+                    <th>ID<img src="css/images/arrowup.jpg" onclick="id_asc()" style="position:relative; margin-bottom: 10px; margin-left: 10px; cursor:pointer;">
+                        <img src="css/images/arrowdown.png" onclick="id_desc()" style="position:relative;  margin-left: 20px; cursor: pointer;">
+                    </th>
+                    <th>Title<img src="css/images/arrowup.jpg" onclick="title_asc()" style="position:relative; margin-bottom: 10px; margin-left: 10px; cursor:pointer;">
+                        <img src="css/images/arrowdown.png" onclick="title_desc()" style="position:relative;  margin-left: 34px; cursor: pointer;">
+                    </th>
+                    <th>Brand<img src="css/images/arrowup.jpg" onclick="brand_asc()" style="position:relative; margin-bottom: 10px; margin-left: 10px; cursor:pointer;">
+                        <img src="css/images/arrowdown.png" onclick="brand_desc()" style="position:relative;  margin-left: 40px; cursor: pointer;">
+                    </th>
+                    <th>Launch TimeFrame<img src="css/images/arrowup.jpg" onclick="time_asc()" style="position:relative; margin-bottom: 10px; margin-top: -10px; margin-left: 10px; cursor:pointer;">
+                        <img src="css/images/arrowdown.png" onclick="time_desc()" style="position:relative;  margin-left: 68px; cursor: pointer;">
+                    </th>
+                    <th>Est. Sales Potential(USD) <img src="css/images/arrowup.jpg" onclick="sales_asc()" style="position:relative; margin-bottom: 10px; margin-top: -22px; margin-left: 77px; cursor:pointer;">
+                        <img src="css/images/arrowdown.png" onclick="sales_desc()" style="position:relative;  margin-left: 77px; cursor: pointer;">
+                    </th>
+                    <th>Est. Sales Potential(CHF)</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#getData}}
+                <tr>
+                    <td>ML{{id}}</td>
+                    <td>{{title}}</td>
+                    <td>{{brand}}</td>
+                    <td>{{timeframe}} {{timeframeyear}}</td>
+                    <td>{{sales}}</td>
+                    <td>{{sales2}}</td>
+                    <td>To Be Launched</td>
+                    <td><img style="cursor:pointer;" onclick="edit_row({{id}})" width='16px' height='16px' id='edit{{id}}' src='css/images/pencil.png'> <img style='cursor:pointer;' onclick='delete_row({{id}})' width='16px' height='16px' id='delete{{id}}' src='css/images/delete.jpg'>
+                    </td>
+                </tr>
+                {{/getData}}
+            </tbody>
+        </table>
+    </script>
+    <script>
+        mustacheDo();
+    </script>
+    <script type="text/javascript" src="js/sorting.js"></script>
+
 
 </body>
 
